@@ -1,11 +1,12 @@
-import Spline from '@splinetool/react-spline/next';
+import { NAME } from '@/constants/CMSEntryIds';
+import { fetchDataByCMSEntryID } from '@/lib/contentful';
 
-export default function Home() {
+export default async function Home() {
+  const data = await fetchDataByCMSEntryID(NAME)
+  
   return (
-    <main className='h-screen'>
-      <Spline
-        scene="https://prod.spline.design/eZpIKx8JHi0brA0s/scene.splinecode" 
-      />
+    <main className="h-screen">
+      <p>{data.name as string}</p>
     </main>
   );
 }
