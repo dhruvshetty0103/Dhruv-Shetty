@@ -1,6 +1,7 @@
 {
   "name": "dhruv-shetty",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,10 +10,13 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "chromatic": "node src/lib/chromatic.js"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "contentful": "^11.3.3",
+    "dotenv": "^16.4.7",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -33,6 +37,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chromatic": "^11.24.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "eslint-plugin-storybook": "^0.11.1",
